@@ -35,10 +35,27 @@ themeToggle.addEventListener("click", () => {
 	const isDark = root.dataset.theme !== "dark";
 	root.dataset.theme = isDark ? "dark" : "light";
 	themeToggle.setAttribute("aria-pressed", String(isDark));
-	themeToggle.textContent = isDark ? "Light mode" : "Dark mode";
+	themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to night mode");
 });
 
-document.querySelector(".current-year").textContent = new Date().getFullYear();
+const xpBar = document.querySelector(".xp-track");
+const xpFill = document.querySelector(".xp-fill");
+const xpValue = document.querySelector(".xp-value");
+
+function updateProgress() {
+	const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+	const progress = scrollableHeight > 0
+		? Math.round((window.scrollY / scrollableHeight) * 100)
+		: 100;
+
+	xpBar.setAttribute("aria-valuenow", String(progress));
+	xpFill.style.width = `${progress}%`;
+	xpValue.textContent = `${progress}%`;
+}
+
+window.addEventListener("scroll", updateProgress, { passive: true });
+window.addEventListener("resize", updateProgress);
+updateProgress();
 
 if ("IntersectionObserver" in window) {
 	const revealObserver = new IntersectionObserver((entries, observer) => {
