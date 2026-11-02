@@ -3,231 +3,242 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="The 8-bit portfolio of Sean Benson: projects, experience, skills, and achievements.">
-	<title>Sean Benson — Portfolio</title>
+	<meta name="theme-color" content="#17253d">
+	<meta name="description" content="The interactive portfolio of Sean Benson: practical technology, AI, and community-focused projects.">
+	<title>Sean Benson — Portfolio Adventure</title>
 	<link rel="stylesheet" href="design.css">
 	<script src="interaction.js" defer></script>
 </head>
 <body>
-	<header>
-		<nav class="container" aria-label="Main navigation">
-			<a class="brand" href="#home">Sean Benson</a>
-			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-			<div class="nav-actions">
-				<div class="nav-links" id="nav-links">
-					<a href="#about">About</a>
-					<a href="#work">Work</a>
-					<a href="#experience">Experience</a>
-					<a href="#recognition">Awards</a>
-					<a href="#certifications">Certifications</a>
-					<a href="#skills">Skills</a>
-					<a href="#contact">Contact</a>
-				</div>
-				<button class="theme-toggle" type="button" aria-label="Switch to night mode" aria-pressed="false" title="Switch theme">
-					<span aria-hidden="true">☀</span>
-					<span class="theme-switch-track" aria-hidden="true"><span class="theme-switch-thumb"></span></span>
-					<span aria-hidden="true">☾</span>
+	<div class="game-shell">
+		<main class="game-world" id="game-world">
+			<div class="sky-decoration cloud cloud-a" aria-hidden="true"></div>
+			<div class="sky-decoration cloud cloud-b" aria-hidden="true"></div>
+			<div class="theme-control">
+				<span class="theme-hint" aria-hidden="true">Click</span>
+				<button class="sky-toggle" id="theme-toggle" type="button" aria-label="Enter night mode" aria-pressed="false">
+					<span class="celestial-body" aria-hidden="true"></span>
 				</button>
 			</div>
-		</nav>
-	</header>
 
-	<main>
-		<div class="container hero" id="home" data-reveal>
-			<span class="eyebrow"><span aria-hidden="true">▶</span> PLAYER 1 READY</span>
-			<p class="intro">I’m Sean, and I love to build practical technology for people, communities, and industry.</p>
-			<a class="button" href="#work">Explore my projects</a>
-		</div>
-
-		<section id="about">
-			<div class="container about" data-reveal>
-				<img class="about-photo" src="assets/Benson-4.png" alt="Portrait of Sean Coen V. Benson" width="1284" height="1839" loading="lazy" decoding="async">
-				<div>
-					<h2>About me</h2>
-					<p class="about-copy">My experience spans AI and computer vision, connected systems, emergency-response applications, startup development, AI-literacy training, marketing research, and visual content production. I enjoy taking ideas from research and early concepts toward useful solutions.</p>
-					<p class="about-copy">I’m based in Iligan City, Philippines.</p>
+			<div class="sky-track" id="sky-track">
+			<section class="level-panel is-active" id="home" data-title="Start" aria-labelledby="home-title" tabindex="0">
+				<div class="panel-content hero-panel">
+					<div class="hero-copy">
+						<h1 id="home-title">Good ideas deserve to be <span>useful.</span></h1>
+						<p class="hero-intro">I’m Sean — a technology builder drawn to practical AI, thoughtful products, and projects that make a difference in people’s lives.</p>
+					</div>
+					<div class="hero-art">
+						<div class="portrait-frame">
+							<img src="assets/Benson-4.png" alt="Portrait of Sean Coen V. Benson" width="1284" height="1839">
+						</div>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section id="work">
-			<div class="container" data-reveal>
-				<h2>Projects</h2>
-				<div class="projects">
-					<article class="card">
-						<h3>TaranTap</h3>
-						<p>Founded a student startup and led development of a mobile emergency app. Simple emergency buttons connect users to the appropriate nearest responder, while shared live locations support faster routing and coordination.</p>
-					</article>
-					<article class="card">
-						<h3>Treon</h3>
-						<p>Researched and developed an AR smart mirror that detects and tracks lips, overlaying lipstick shades on a user’s reflection for a real-time virtual try-on.</p>
-					</article>
-					<article class="card">
-						<h3>E-Limango</h3>
-						<p>Designed a decision-support system for mudcrab farms. It monitors water quality, weather, and crab health, then turns the data into actionable farm-management recommendations.</p>
-					</article>
-					<article class="card">
-						<h3>ViaBone</h3>
-						<p>Explored turning fish and chicken bone waste into ceramic material by cleaning, processing, and combining bone powder with other ceramic components.</p>
-					</article>
-					<article class="card">
-						<h3>AquaAir</h3>
-						<p>Ideated a modified atmospheric water generator that extracts water from air as an alternative water source for commercial farming.</p>
-					</article>
-					<article class="card">
-						<h3>I-Gaan</h3>
-						<p>Developed a mobile app to compare local medical laboratories, check tests, hours, and availability, and book tests in advance to reduce waiting.</p>
-					</article>
+			<section class="level-panel" id="about" data-title="About" aria-labelledby="about-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading">
+						<h2 id="about-title">I like making complex things feel <span>human.</span></h2>
+						<p class="panel-lede">A curious generalist, at home between technology and people.</p>
+					</div>
+					<div class="about-layout">
+						<div class="about-copy">
+							<p>My experience spans AI and computer vision, connected systems, emergency-response applications, startup development, AI-literacy training, marketing research, and visual content production.</p>
+							<p>I enjoy taking ideas from research and early concepts toward useful solutions — and bringing people along in the process.</p>
+						</div>
+						<div class="attribute-grid">
+							<div class="attribute-card"><span>01</span><strong>Curious</strong><p>Always learning across disciplines.</p></div>
+							<div class="attribute-card"><span>02</span><strong>Hands-on</strong><p>From early idea to working prototype.</p></div>
+							<div class="attribute-card"><span>03</span><strong>People-first</strong><p>Useful solutions start with real needs.</p></div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section id="experience">
-			<div class="container" data-reveal>
-				<h2>Experience &amp; leadership</h2>
-				<div class="projects">
-					<article class="card">
-						<h3>AI/ML Algorithms Student Intern</h3>
-						<p class="organization">Analog Devices, Inc.</p>
-						<p>Built and tested computer-vision and image-processing workflows to enhance scanned electronic circuit plot diagrams and convert them into clean digital representations.</p>
-					</article>
-					<article class="card">
-						<h3>Marketing Intern</h3>
-						<p class="organization">MAGWAI</p>
-						<p>Researched competitors, content strategies, and market trends, then proposed eight content ideas for a three-month publishing period.</p>
-					</article>
-					<article class="card">
-						<h3>Resident Creative</h3>
-						<p class="organization">Alex &amp; B. Creative Studio</p>
-						<p>Produced and edited photo and video marketing content for three local food businesses during a four-month internship.</p>
-					</article>
-					<article class="card">
-						<h3>AI Master Trainer</h3>
-						<p class="organization">SmartCT &amp; ASEAN Foundation</p>
-						<p>Delivers AI-literacy training and hands-on sessions, develops learning materials, demonstrates tools, and guides participants through practical use cases.</p>
-					</article>
-					<article class="card">
-						<h3>Hub Leader</h3>
-						<p class="organization">KadaKareer</p>
-						<p>Coordinates career-development programs, supports member collaboration, and encourages participation in learning, networking, and professional-growth opportunities.</p>
-					</article>
-					<article class="card">
-						<h3>Founder</h3>
-						<p class="organization">TaranTap</p>
-						<p>Founded an emergency-response startup and led the project from problem definition and solution design through application development and refinement around user and responder needs. The name combines “Taranta” (panic) and “Tap.”</p>
-					</article>
+			<section class="level-panel" id="work" data-title="Projects" aria-labelledby="work-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading compact-heading">
+						<p class="eyebrow">QUEST LOG</p>
+						<h2 id="work-title">Ideas put into action<span class="heading-dot">.</span></h2>
+						<p class="panel-lede">Products, experiments, and solutions built around real-world needs.</p>
+					</div>
+					<div class="project-grid">
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 01</span><span>Emergency response</span></div>
+							<h3>TaranTap</h3>
+							<p>Founded a student startup and led development of a mobile emergency app. Simple emergency buttons connect users to the appropriate nearest responder, while shared live locations support faster routing and coordination.</p>
+						</article>
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 02</span><span>Augmented reality</span></div>
+							<h3>Treon</h3>
+							<p>Researched and developed an AR smart mirror that detects and tracks lips, overlaying lipstick shades on a user’s reflection for a real-time virtual try-on.</p>
+						</article>
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 03</span><span>Agriculture tech</span></div>
+							<h3>E-Limango</h3>
+							<p>Designed a decision-support system for mudcrab farms. It monitors water quality, weather, and crab health, then turns the data into actionable farm-management recommendations.</p>
+						</article>
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 04</span><span>Materials research</span></div>
+							<h3>ViaBone</h3>
+							<p>Explored turning fish and chicken bone waste into ceramic material by cleaning, processing, and combining bone powder with other ceramic components.</p>
+						</article>
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 05</span><span>Sustainable water</span></div>
+							<h3>AquaAir</h3>
+							<p>Ideated a modified atmospheric water generator that extracts water from air as an alternative water source for commercial farming.</p>
+						</article>
+						<article class="project-card">
+							<div class="card-topline"><span>QUEST 06</span><span>Health technology</span></div>
+							<h3>I-Gaan</h3>
+							<p>Developed a mobile app to compare local medical laboratories, check tests, hours, and availability, and book tests in advance to reduce waiting.</p>
+						</article>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section id="recognition">
-			<div class="container" data-reveal>
-				<h2>Awards &amp; activities</h2>
-				<ul class="detail-list">
-					<li>Philippine Startup Challenge X — National Finalist</li>
-					<li>Philippine Startup Challenge X — Regional Champion</li>
-					<li>YSEALI Cyberbayanihan Summit — Iligan City Delegate</li>
-					<li>DEPDev H.A.B.I. Workshop — National Winner, Food and Agribusiness</li>
-					<li>Huawei Asia Pacific Developer Competition — Semi-Finalist</li>
-					<li>Philippine Startup Challenge 9 — Regional Finalist</li>
-					<li>Huawei Seeds for the Future — Philippine Delegate</li>
-					<li>DICT Regional Hack4Gov 3 — 7th Place</li>
-					<li>International Labour Organization Start and Improve Your Business — Department of Trade and Industry</li>
-					<li>QOMPETE National Student Startup Challenge — Qualifier</li>
-					<li>Kasetsart University BCG Ideation Challenge (Thailand) — University Champion, Non-Food Category</li>
-					<li>MSU-IIT Young Innovators Startup Apprenticeship Program</li>
-					<li>Iligan Business Awards — Merit Award for Best Innovative Smart City Startup of the Year</li>
-					<li>Philippine Startup Challenge 8 — Regional Finalist</li>
-					<li>FutureIliganX Smart City Hackathon — Champion</li>
-				</ul>
-			</div>
-		</section>
-
-		<section id="certifications">
-			<div class="container" data-reveal>
-				<h2>Licenses &amp; certifications</h2>
-				<ul class="detail-list">
-					<li>Google AI Professional Certificate — Google &amp; Coursera</li>
-					<li>AI for App Building — Coursera &amp; Google</li>
-					<li>AI for Data Analysis — Coursera &amp; Google</li>
-					<li>AI for Content Creation — Coursera &amp; Google</li>
-					<li>AI for Writing and Communicating — Coursera &amp; Google</li>
-					<li>AI for Research and Insights — Coursera &amp; Google</li>
-					<li>AI for Brainstorming and Planning — Coursera &amp; Google</li>
-					<li>AI Fundamentals — Coursera &amp; Google</li>
-					<li>Ignite Philippines Proficiency Certificate — Wadhwani Foundation Philippines</li>
-					<li>AI Class ASEAN — ASEAN Foundation</li>
-					<li>Google Project Management Professional Certificate — Coursera &amp; Google</li>
-					<li>Capstone: Applying Project Management in the Real World — Coursera &amp; Google</li>
-					<li>Agile Project Management — Coursera &amp; Google</li>
-					<li>Project Planning: Putting It All Together; Project Execution: Running the Project — Coursera &amp; Google</li>
-					<li>Project Initiation: Starting a Successful Project — Coursera &amp; Google</li>
-					<li>Foundations of Project Management — Coursera &amp; Google</li>
-				</ul>
-			</div>
-		</section>
-
-		<section id="skills">
-			<div class="container" data-reveal>
-				<h2>Skills</h2>
-				<div class="projects">
-					<article class="card">
-						<h3>Programming &amp; data</h3>
-						<p>C, C++, HTML, Git, SQL, Python, Assembly, Scratch, Scikit-learn, NumPy, Pandas, Matplotlib, data science, web design and development.</p>
-					</article>
-					<article class="card">
-						<h3>AI &amp; machine learning</h3>
-						<p>Artificial intelligence, computer vision, augmented reality, deep learning, OpenCV, image processing, analysis, and segmentation.</p>
-					</article>
-					<article class="card">
-						<h3>IoT &amp; embedded systems</h3>
-						<p>IoT systems, microcontroller and microcomputer programming, embedded systems, Arduino, Raspberry Pi, ESP32, ESP8266, RockPi, and sensors.</p>
-					</article>
-					<article class="card">
-						<h3>Marketing &amp; creative tools</h3>
-						<p>Digital marketing, online competitive analysis, content marketing, social media management, photography, photo editing, video editing, Adobe Photoshop, Lightroom, After Effects, and Premiere Pro.</p>
-					</article>
-					<article class="card">
-						<h3>Leadership &amp; delivery</h3>
-						<p>Technical training, advising, team coordination, communication, project planning and execution, startup development, entrepreneurship, and project management.</p>
-					</article>
+			<section class="level-panel" id="experience" data-title="Experience" aria-labelledby="experience-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading compact-heading">
+						<p class="eyebrow">PLAYER JOURNEY</p>
+						<h2 id="experience-title">Experience &amp; leadership<span class="heading-dot">.</span></h2>
+						<p class="panel-lede">Learning by building, collaborating, and sharing what I know.</p>
+					</div>
+					<div class="experience-grid">
+						<article class="experience-card"><span class="item-number">01</span><div><h3>AI/ML Algorithms Student Intern</h3><p class="organization">Analog Devices, Inc.</p><p>Built and tested computer-vision and image-processing workflows to enhance scanned electronic circuit plot diagrams and convert them into clean digital representations.</p></div></article>
+						<article class="experience-card"><span class="item-number">02</span><div><h3>Marketing Intern</h3><p class="organization">MAGWAI</p><p>Researched competitors, content strategies, and market trends, then proposed eight content ideas for a three-month publishing period.</p></div></article>
+						<article class="experience-card"><span class="item-number">03</span><div><h3>Resident Creative</h3><p class="organization">Alex &amp; B. Creative Studio</p><p>Produced and edited photo and video marketing content for three local food businesses during a four-month internship.</p></div></article>
+						<article class="experience-card"><span class="item-number">04</span><div><h3>AI Master Trainer</h3><p class="organization">SmartCT &amp; ASEAN Foundation</p><p>Delivers AI-literacy training and hands-on sessions, develops learning materials, demonstrates tools, and guides participants through practical use cases.</p></div></article>
+						<article class="experience-card"><span class="item-number">05</span><div><h3>Hub Leader</h3><p class="organization">KadaKareer</p><p>Coordinates career-development programs, supports member collaboration, and encourages participation in learning, networking, and professional-growth opportunities.</p></div></article>
+						<article class="experience-card"><span class="item-number">06</span><div><h3>Founder</h3><p class="organization">TaranTap</p><p>Founded an emergency-response startup and led the project from problem definition and solution design through application development and refinement around user and responder needs. The name combines “Taranta” (panic) and “Tap.”</p></div></article>
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section id="contact">
-			<div class="container contact" data-reveal>
-				<div>
-					<h2>Have a project in mind?</h2>
-					<p>I’m open to conversations about technology, AI, and community-focused projects.</p>
+			<section class="level-panel" id="awards" data-title="Awards" aria-labelledby="awards-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading compact-heading">
+						<p class="eyebrow">TROPHY ROOM</p>
+						<h2 id="awards-title">Milestones along the way<span class="heading-dot">.</span></h2>
+						<p class="panel-lede">A few moments I’m proud of.</p>
+					</div>
+					<ul class="achievement-grid">
+						<li>Philippine Startup Challenge X <span>National Finalist</span></li>
+						<li>Philippine Startup Challenge X <span>Regional Champion</span></li>
+						<li>YSEALI Cyberbayanihan Summit <span>Iligan City Delegate</span></li>
+						<li>DEPDev H.A.B.I. Workshop <span>National Winner, Food and Agribusiness</span></li>
+						<li>Huawei Asia Pacific Developer Competition <span>Semi-Finalist</span></li>
+						<li>Philippine Startup Challenge 9 <span>Regional Finalist</span></li>
+						<li>Huawei Seeds for the Future <span>Philippine Delegate</span></li>
+						<li>DICT Regional Hack4Gov 3 <span>7th Place</span></li>
+						<li>International Labour Organization Start and Improve Your Business <span>Department of Trade and Industry</span></li>
+						<li>QOMPETE National Student Startup Challenge <span>Qualifier</span></li>
+						<li>Kasetsart University BCG Ideation Challenge, Thailand <span>University Champion, Non-Food Category</span></li>
+						<li>MSU-IIT Young Innovators Startup Apprenticeship Program</li>
+						<li>Iligan Business Awards <span>Merit Award for Best Innovative Smart City Startup of the Year</span></li>
+						<li>Philippine Startup Challenge 8 <span>Regional Finalist</span></li>
+						<li>FutureIliganX Smart City Hackathon <span>Champion</span></li>
+					</ul>
 				</div>
-				<div class="contact-links">
-					<a class="button" href="mailto:seancoen.benson@g.msuiit.edu.ph">Email Sean</a>
-					<a class="button button-secondary" href="https://www.linkedin.com/in/sean-coen-benson-a45291276/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-				</div>
-			</div>
-		</section>
-	</main>
+			</section>
 
-	<div class="progress-dock">
-		<div class="progress-inner container">
-			<span class="progress-label">Progress</span>
-			<div class="xp-track" role="progressbar" aria-label="Portfolio reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-				<span class="xp-fill"></span>
+			<section class="level-panel" id="badges" data-title="Badges" aria-labelledby="badges-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading compact-heading">
+						<p class="eyebrow">BADGE COLLECTION</p>
+						<h2 id="badges-title">Skills earned along the way<span class="heading-dot">.</span></h2>
+						<p class="panel-lede">Licenses and certifications.</p>
+					</div>
+					<ul class="achievement-grid badge-grid">
+						<li>Google AI Professional Certificate <span>Google &amp; Coursera</span></li>
+						<li>AI for App Building <span>Coursera &amp; Google</span></li>
+						<li>AI for Data Analysis <span>Coursera &amp; Google</span></li>
+						<li>AI for Content Creation <span>Coursera &amp; Google</span></li>
+						<li>AI for Writing and Communicating <span>Coursera &amp; Google</span></li>
+						<li>AI for Research and Insights <span>Coursera &amp; Google</span></li>
+						<li>AI for Brainstorming and Planning <span>Coursera &amp; Google</span></li>
+						<li>AI Fundamentals <span>Coursera &amp; Google</span></li>
+						<li>Ignite Philippines Proficiency Certificate <span>Wadhwani Foundation Philippines</span></li>
+						<li>AI Class ASEAN <span>ASEAN Foundation</span></li>
+						<li>Google Project Management Professional Certificate <span>Coursera &amp; Google</span></li>
+						<li>Capstone: Applying Project Management in the Real World <span>Coursera &amp; Google</span></li>
+						<li>Agile Project Management <span>Coursera &amp; Google</span></li>
+						<li>Project Planning: Putting It All Together; Project Execution: Running the Project <span>Coursera &amp; Google</span></li>
+						<li>Project Initiation: Starting a Successful Project <span>Coursera &amp; Google</span></li>
+						<li>Foundations of Project Management <span>Coursera &amp; Google</span></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="level-panel" id="skills" data-title="Skills" aria-labelledby="skills-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content">
+					<div class="panel-heading compact-heading">
+						<p class="eyebrow">INVENTORY</p>
+						<h2 id="skills-title">A broad toolkit<span class="heading-dot">.</span></h2>
+						<p class="panel-lede">A multidisciplinary mix of technical, creative, and people skills.</p>
+					</div>
+					<div class="skills-grid">
+						<article class="skill-card"><span>01 / TECH</span><h3>Programming &amp; data</h3><p>C, C++, HTML, Git, SQL, Python, Assembly, Scratch, Scikit-learn, NumPy, Pandas, Matplotlib, data science, web design and development.</p></article>
+						<article class="skill-card"><span>02 / AI</span><h3>AI &amp; machine learning</h3><p>Artificial intelligence, computer vision, augmented reality, deep learning, OpenCV, image processing, analysis, and segmentation.</p></article>
+						<article class="skill-card"><span>03 / SYSTEMS</span><h3>IoT &amp; embedded systems</h3><p>IoT systems, microcontroller and microcomputer programming, embedded systems, Arduino, Raspberry Pi, ESP32, ESP8266, RockPi, and sensors.</p></article>
+						<article class="skill-card"><span>04 / CREATIVE</span><h3>Marketing &amp; creative tools</h3><p>Digital marketing, online competitive analysis, content marketing, social media management, photography, photo editing, video editing, Adobe Photoshop, Lightroom, After Effects, and Premiere Pro.</p></article>
+						<article class="skill-card"><span>05 / PEOPLE</span><h3>Leadership &amp; delivery</h3><p>Technical training, advising, team coordination, communication, project planning and execution, startup development, entrepreneurship, and project management.</p></article>
+					</div>
+				</div>
+			</section>
+
+			<section class="level-panel" id="contact" data-title="Contact" aria-labelledby="contact-title" tabindex="0" aria-hidden="true" inert>
+				<div class="panel-content contact-panel">
+					<h2 id="contact-title">Let’s make something <span>that matter.</span></h2>
+					<p class="contact-copy">I’m open to conversations about technology, AI, and community-focused projects.</p>
+					<div class="contact-actions">
+						<a class="game-button primary-button" href="mailto:bensoncutee@gmail.com">Email Sean <span aria-hidden="true">↗</span></a>
+						<a class="game-button secondary-button" href="https://www.linkedin.com/in/sean-coen-benson-a45291276/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+					</div>
+				</div>
+			</section>
+
 			</div>
-			<span class="xp-value">0%</span>
-		</div>
+
+			<button class="player" id="player" type="button" aria-label="Make Sean jump and wave">
+				<svg class="avatar-sprite" viewBox="0 0 48 62" aria-hidden="true" shape-rendering="crispEdges">
+					<g class="avatar-arm avatar-arm-left">
+						<rect x="9" y="34" width="5" height="10" fill="#c9825f"/>
+						<rect x="9" y="43" width="5" height="3" fill="#a95f49"/>
+					</g>
+					<g class="avatar-arm avatar-arm-right">
+						<rect x="34" y="34" width="5" height="10" fill="#c9825f"/>
+						<rect x="34" y="43" width="5" height="3" fill="#a95f49"/>
+					</g>
+					<rect x="20" y="26" width="8" height="7" fill="#bc7658"/>
+					<rect x="13" y="31" width="22" height="17" fill="#247658"/>
+					<path d="M13 32h5v4h-5zm17 0h5v4h-5z" fill="#2c8963"/>
+					<path d="M22 32h4v5h-4z" fill="#d8ef83"/>
+					<path d="M16 47h8v6h-8zm9 0h8v6h-8z" fill="#344966"/>
+					<g class="avatar-leg avatar-leg-left">
+						<rect x="16" y="51" width="7" height="7" fill="#344966"/>
+						<rect x="12" y="57" width="12" height="4" fill="#202b3d"/>
+						<rect x="12" y="57" width="8" height="1" fill="#52627a"/>
+					</g>
+					<g class="avatar-leg avatar-leg-right">
+						<rect x="26" y="51" width="7" height="7" fill="#344966"/>
+						<rect x="27" y="57" width="12" height="4" fill="#202b3d"/>
+						<rect x="31" y="57" width="8" height="1" fill="#52627a"/>
+					</g>
+					<rect x="10" y="16" width="4" height="6" fill="#a95f49"/>
+					<rect x="34" y="16" width="4" height="6" fill="#a95f49"/>
+					<rect x="13" y="9" width="22" height="20" fill="#c9825f"/>
+					<path d="M13 17V9h3V6h4V4h10v2h4v3h3v9h-4v-4h-3v-2H20v3h-4v3h-3z" fill="#292b2d"/>
+					<rect x="18" y="18" width="2" height="2" fill="#17253d"/>
+					<rect x="28" y="18" width="2" height="2" fill="#17253d"/>
+					<rect x="23" y="22" width="2" height="2" fill="#a95f49"/>
+					<rect x="21" y="26" width="6" height="1" fill="#864b41"/>
+				</svg>
+				<span class="avatar-shadow" aria-hidden="true"></span>
+			</button>
+		</main>
+
 	</div>
-
-	<footer>
-		<div class="container">
-			<p>Sean Coen V. Benson · Iligan City, Philippines</p>
-			<p>Sean Benson · Made with care.</p>
-		</div>
-	</footer>
 </body>
 </html>
