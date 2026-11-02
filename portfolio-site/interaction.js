@@ -25,6 +25,9 @@ let activeLevel = -1;
 let wheelDelta = 0;
 let wheelTimeout;
 let touchStartX = 0;
+let touchStartY = 0;
+let touchStartTarget = null;
+let touchStarted = false;
 let jumpTimeout;
 let waveTimeout;
 
@@ -128,14 +131,40 @@ document.querySelector(".game-world").addEventListener("wheel", (event) => {
 document.querySelector(".game-world").addEventListener("touchstart", (event) => {
 	if (event.touches.length === 1) {
 		touchStartX = event.touches[0].clientX;
+		touchStartY = event.touches[0].clientY;
+		touchStartTarget = event.target;
+		touchStarted = true;
 	}
 }, { passive: true });
 
 document.querySelector(".game-world").addEventListener("touchend", (event) => {
-	if (!touchStartX || event.changedTouches.length !== 1) return;
-	const distance = event.changedTouches[0].clientX - touchStartX;
-	if (Math.abs(distance) > 65) moveLevel(distance < 0 ? 1 : -1);
+	if (!touchStarted || event.changedTouches.length !== 1) return;
+	const distanceX = event.changedTouches[0].clientX - touchStartX;
+	const distanceY = event.changedTouches[0].clientY - touchStartY;
+	if (Math.max(Math.abs(distanceX), Math.abs(distanceY)) > 65) {
+		if (Math.abs(distanceX) > Math.abs(distanceY)) {
+			moveLevel(distanceX < 0 ? 1 : -1);
+		} else {
+			const startElement = touchStartTarget instanceof Element ? touchStartTarget : null;
+			const panel = startElement?.closest(".level-panel") ?? levels[activeLevel];
+			const canScrollPanel = panel.classList.contains("is-active")
+				&& panel.scrollHeight > panel.clientHeight
+				&& ((distanceY < 0 && panel.scrollTop + panel.clientHeight < panel.scrollHeight - 1)
+					|| (distanceY > 0 && panel.scrollTop > 0));
+			if (!canScrollPanel) moveLevel(distanceY < 0 ? 1 : -1);
+		}
+	}
 	touchStartX = 0;
+	touchStartY = 0;
+	touchStartTarget = null;
+	touchStarted = false;
+}, { passive: true });
+
+document.querySelector(".game-world").addEventListener("touchcancel", () => {
+	touchStartX = 0;
+	touchStartY = 0;
+	touchStartTarget = null;
+	touchStarted = false;
 }, { passive: true });
 
 setLevel(0);

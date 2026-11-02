@@ -36,6 +36,7 @@ body {
 }
 button, a { color: inherit; font: inherit; }
 button { cursor: pointer; }
+a, button { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; }
 ::selection { color: var(--ink); background: var(--lime); }
 ::-webkit-scrollbar { display: none; }
@@ -236,6 +237,7 @@ img { display: block; max-width: 100%; }
 	scrollbar-width: none;
 	overscroll-behavior: contain;
 	scroll-behavior: smooth;
+	touch-action: pan-y pinch-zoom;
 }
 .level-panel[hidden] { display: none; }
 .panel-content {
@@ -415,7 +417,8 @@ img { display: block; max-width: 100%; }
 	.hero-intro { margin-top: 12px; font-size: 0.76rem; line-height: 1.55; }
 	.game-button { min-height: 37px; gap: 7px; padding-inline: 10px; font-size: 0.63rem; }
 	.hero-art { width: min(100%, 175px); }
-	.theme-control { top: 2%; right: 3%; transform: scale(0.82); transform-origin: top right; }
+	.theme-control { top: 2%; right: 3%; width: 66px; height: 110px; transform: scale(0.82); transform-origin: top right; }
+	.theme-hint { top: 76px; right: 0; }
 	.panel-heading { margin-bottom: 18px; }
 	.panel-heading h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
 	.compact-heading h2 { font-size: clamp(1.8rem, 7.3vw, 2.5rem); }
